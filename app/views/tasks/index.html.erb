@@ -1,15 +1,15 @@
 <div class="container">
   <h2>My tasks</h2>
 
-  <ul class="color-black">
-    <% @tasks.each do |task| %>
-      if task.completed == true
-      <li><i class="far fa-square"></i> <%= link_to task.title, task_path(task) %> <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Delete #{task.title}?" } %></li>
+  <ul>
+  <% @tasks.each do |task| %>
+    <% if task.completed == true %>
+    <li><i class="far fa-check-square"></i> <%= link_to task.title, task_path(task) %> <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Delete #{task.title}?" } %></li>
+    <% else %>
+    <li><i class="far fa-square"></i> <%= link_to task.title, task_path(task) %> <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Delete #{task.title}?" } %></li>
     <% end %>
+  <% end %>
   </ul>
 
   <%= link_to "Add a new task", new_task_path %>
 </div>
-
-<!-- <i class="far fa-check-square"> -->
-<!-- link_to "Delete", -->
