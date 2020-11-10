@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.container {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
